@@ -1,0 +1,220 @@
+@font-face {
+  font-family: "Montserrat Light";
+  src: url('Montserrat-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header_task{
+  background-image: url("taskList.png");
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 23px;
+  color: black;
+  width: 100%;
+  padding: 15px 0;
+  margin-bottom: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.app {
+  background-image: url("7971.jpg");
+  background-color: #333f40;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Montserrat Light";
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+form {
+  padding: 30px;
+  border-radius: 20px;
+  margin: 20px 0;
+  background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон */
+  backdrop-filter: blur(10px); /* Эффект размытого стекла */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(255, 242, 227, 0.3); /* Тень для лучшего восприятия */
+}
+
+.task-form{
+  background-size: cover;
+  background-color: rgba(255, 242, 227, 0);
+  padding: 0px;
+  margin: 0;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+}
+
+input, textarea {
+  font-family: "Montserrat Light";
+  border: solid 1px #b4cccf;
+  display: flex;
+  margin: 9px 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+input:hover{
+  background-color: #f4ebff;
+  border: solid 1px #ffffff;
+}
+
+button {
+  border-radius: 10px;
+  color: white;
+  background-color: #333f40;
+  border: solid 1px #333f40;
+  font-family: "Montserrat Light";
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+button:hover{
+  color: #333f40;
+  background-color: #f4ebff;
+  border: solid 1px #e1cdfa;
+}
+
+select{
+  border-radius: 10px;
+  color: #333f40;
+  padding: 10px;
+  margin: 5px;
+  font-family: "Montserrat Light";
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.task-item {
+  background-image: url("taskList.png");
+  background-size: cover; /* Растягивание фона до размеров контейнера */
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .task-item {
+    width: 100%; /* Задачи занимают всю ширину контейнера */
+    margin: 5px 0; /* Уменьшение отступов */
+  }
+}
+
+/* Стили для контейнера с чекбоксом и текстом */
+.task-completed {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Размещение текста и галочки справа */
+  margin-bottom: 10px;
+}
+
+.task-completed span {
+  margin-right: 10px; /* Отступ справа для текста */
+}
+
+/* Скрыть стандартный чекбокс */
+.task-completed input[type="checkbox"] {
+  appearance: none; /* Убираем стандартный вид чекбокса */
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333f40;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  margin-left: 10px;
+}
+
+.task-completed input[type="checkbox"]:checked::before {
+  content: "✔";
+  position: absolute;
+  top: -3px;
+  left: 3px;
+  font-size: 16px;
+  color: #333f40;
+}
+
+.task-completed input[type="checkbox"]:hover {
+  border-color: #555;
+}
+
+.task-completed input[type="checkbox"]:checked {
+  background-color: #fce5cc;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+}
+
+.marquee-container {
+  margin: 0;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.8);
+  color: #000;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+}
+
+.marquee {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-inner {
+  display: flex;
+}
+
+.marquee-inner > * {
+  margin-right: 50px; /* добавление промежутка между дублирующимися строками */
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
